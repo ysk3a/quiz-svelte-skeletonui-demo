@@ -8,6 +8,9 @@
 	import '../app.postcss';
 	import { LightSwitch, AppShell } from '@skeletonlabs/skeleton';
 	import type { ComponentEvents } from 'svelte';
+	import { page } from '$app/stores';
+
+	$page.url.pathname;
 
 	function scrollHandler(event: ComponentEvents<AppShell>['scroll']) {
 		console.log(event.currentTarget.scrollTop);
@@ -16,7 +19,25 @@
 
 <AppShell on:scroll={scrollHandler}>
 	<svelte:fragment slot="header"><LightSwitch /></svelte:fragment>
-	<svelte:fragment slot="sidebarLeft">Sidebar Left</svelte:fragment>
+	<svelte:fragment slot="sidebarLeft">
+		{#if $page.url.pathname === '/about'}
+			<a href="/" class="btn variant-filled-tertiary">
+				<span>Home</span>
+			</a>
+		{:else if $page.url.pathname === '/'}
+			<a href="/about" class="btn variant-filled-tertiary">
+				<span>About</span>
+			</a>
+		{:else}
+			<a href="/" class="btn variant-filled-tertiary">
+				<span>Home</span>
+			</a>
+			<br />
+			<a href="/about" class="btn variant-filled-tertiary">
+				<span>About</span>
+			</a>
+		{/if}
+	</svelte:fragment>
 	<svelte:fragment slot="sidebarRight">Sidebar Right</svelte:fragment>
 	<!-- (pageHeader) -->
 	<!-- Router Slot -->
