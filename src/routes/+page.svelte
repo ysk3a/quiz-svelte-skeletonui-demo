@@ -8,3 +8,5 @@
 		<Card {quiz} />
 	{/each}
 </div>
+
+<!-- https://youtu.be/o6VwbXSjM08?t=8352 -->
