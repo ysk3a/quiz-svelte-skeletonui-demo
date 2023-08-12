@@ -2,53 +2,6 @@
 	import * as images from '../image';
 	import { goto } from '$app/navigation';
 	// accept parent to child data communication
-	// type TOptions = {
-	// 	id: number;
-	// 	label: string;
-	// 	text: string;
-	// };
-	// type TQuestion = {
-	// 	id: number;
-	// 	question: string;
-	// 	options: TOptions[];
-	// 	answer: string;
-	// };
-	// type TQuiz = {
-	// 	id: number;
-	// 	name: string;
-	// 	imageUrl: string;
-	// 	questions: TQuestion[];
-	// };
-	// type Quiz = {
-	// 	id: number;
-	// 	name: string;
-	// 	imageUrl: string;
-	// 	questions: {
-	// 		id: number;
-	// 		question: string;
-	// 		options: {
-	// 			id: number;
-	// 			label: string;
-	// 			text: string;
-	// 		}[];
-	// 		answer: string;
-	// 	}[];
-	// };
-	// type Quiz3 = {
-	// 	id: number;
-	// 	name: string;
-	// 	imageUrl: string;
-	// 	questions: {
-	// 		id: number;
-	// 		question: string;
-	// 		options: {
-	// 			id: number;
-	// 			label: string;
-	// 			text: string;
-	// 		}[];
-	// 		answer: string;
-	// 	}[];
-	// };
 
 	interface Quiz4 {
 		id: number;

@@ -5,26 +5,28 @@
 	let answersValue: Answer[] = [];
 
 	// get value from global store
-	answers.subscribe((value) => {
-		answersValue = value;
-	});
+	// answers.subscribe((value) => {
+	// 	answersValue = value;
+	// });
+	// answersValue = $answers;
 
-	const numberOfCorrectAnswers = answersValue.reduce((sum, answer) => {
+	const numberOfCorrectAnswers = $answers.reduce((sum, answer) => {
 		if (answer.isCorrect) {
 			return sum + 1;
 		}
 		return sum;
 	}, 0);
 
-	const numberOfQuestions = answersValue.length;
+	const numberOfQuestions = $answers.length;
 
 	const handleBack = () => {
-		answers.set([]);
+		// answers.set([]);
+		$answers = [];
 		goto('/');
 	};
 
 	onMount(() => {
-		if (!answersValue.length) goto('/');
+		if (!$answers.length) goto('/');
 	});
 </script>
 
