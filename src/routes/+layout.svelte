@@ -41,7 +41,11 @@
 	<svelte:fragment slot="sidebarRight">Sidebar Right</svelte:fragment>
 	<!-- (pageHeader) -->
 	<!-- Router Slot -->
-	<slot />
+	<div class="container h-full mx-auto flex justify-center items-center">
+		<slot />
+		<!-- slot component that renders the page of the routes user is in -->
+		<!--  -->
+	</div>
 	<!-- ---- / ---- -->
 	<!-- (pageFooter) -->
 	<svelte:fragment slot="footer">Footer</svelte:fragment>
